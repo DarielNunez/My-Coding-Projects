@@ -1,0 +1,42 @@
+﻿#include <cstdlib>
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+
+int main()
+{
+    //Setting the seed of the random number generator
+    srand(time(NULL));
+    
+    //Declaring variables
+    int max = 20;
+    int guess;
+    int luckyNum =  rand() % max;
+    
+    //Ask for user input
+    cout<<"Try to guess the number between 0 & 20\n"<<endl;
+    cin>> guess;
+
+
+    //Loop that will run 10 times
+        for (int i = 0; i < 9; i++)
+        {
+            if  (guess != luckyNum)
+            {
+                cout << "Please try again" <<endl;
+                cin >> guess;
+                if (i == 8 & guess != luckyNum)
+                {
+                    cout <<"Sorry you are out of guesses!"<<endl;
+                } 
+            }
+            
+            else 
+            {
+                cout <<"\nCongratulations, you guessed correctly!"<<endl;
+                break;
+            }
+            
+        }                 
+}
