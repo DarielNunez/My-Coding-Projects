@@ -1,0 +1,133 @@
+﻿#include <iostream>
+using namespace std;
+
+
+int triangle();
+int inverted();
+int half();
+
+
+int main()
+{
+
+
+    int choice;
+
+
+    cout << "THIS PROGRAM DRAWS VARIOUS SHAPES.\n" << endl; 
+    cout << "1. Filled Triangle" << endl; 
+    cout << "2. Filled Inverted Trianlge" << endl; 
+    cout << "3. Unfilled Triangle" << endl; 
+    cout << "4. Exit\n" << endl; 
+    cout <<"Please Enter a Number between 1 and 4"<<endl; 
+    cin >> choice ; 
+
+
+    switch (choice) 
+    { 
+        
+        case 1:
+        
+        int t;
+        t = triangle();
+        cout<<t;
+        
+        {
+            case 2:
+            
+            int i;
+            i = inverted();
+            cout<<i;
+            
+            {
+                case 3:
+                
+                int h;
+                h = half();
+                cout<<h;
+                
+                {
+                    case 4:
+                    
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+int triangle()
+{
+    int rows;
+    int space;    
+    
+    cout <<"Enter number of rows: ";
+    cin >> rows;
+    
+    for(int i = 1, k = 0; i <= rows; ++i, k = 0) 
+    {
+        for(space = 1; space <= rows-i; ++space) 
+        {
+            cout <<"  ";
+        }
+
+
+        while(k != 2*i-1) 
+        {
+            cout << "* ";
+            ++k;
+        }
+            cout << endl;   
+    }    
+    exit(0);
+}
+
+
+int inverted()
+{
+    int rows;
+
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+
+    for(int i = rows; i >= 1; --i) 
+    {
+        for(int space = 0; space < rows-i; ++space)
+            cout << "  ";
+
+
+        for(int j = i; j <= 2*i-1; ++j)
+            cout << "* ";
+
+
+        for(int j = 0; j < i-1; ++j)
+            cout << "* ";
+
+
+        cout << endl;
+    }    
+    exit(0);
+}
+
+
+int half()
+{
+    int rows;
+
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+
+    for(int i = 1; i <= rows; ++i) 
+    {
+        for(int j = 1; j <= i; ++j) 
+            cout << "* ";
+            
+        cout << "\n";
+    }    
+    exit(0);
+}
